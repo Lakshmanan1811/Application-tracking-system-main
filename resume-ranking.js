@@ -74,8 +74,6 @@ Promise.all([
 //email automation
 
 const emailAutomation = function () {
-  const { createTransport } = require("nodemailer");
-
   const transporter = createTransport({
     host: "smtp-relay.sendinblue.com",
     port: 587,
