@@ -1,7 +1,7 @@
 import fs from 'fs';
 import pdfjs from 'pdfjs-dist';
 import natural from 'natural';
-import { createTransport } from 'nodemailer';
+import { createTransport } from "nodemailer";
 let total = 0;
 // Function to read the contents of a PDF file
 async function extractInformationFromPDF(filePath) {
@@ -49,7 +49,7 @@ function rankMatches(extractedText, jobDescription) {
 
   return rankedMatches;
 }
-const pdfFilePath = "resume.pdf";
+const pdfFilePath = "cisco resume.pdf";
 const jobDescriptionFilePath = "resume.json";
 
 Promise.all([
@@ -66,8 +66,8 @@ Promise.all([
     );
     total += match.similarity;
   });
-  if (total > 60) {
-    //emailAutomation();
+  if (total > 350) {
+    emailAutomation();
   }
 });
 
